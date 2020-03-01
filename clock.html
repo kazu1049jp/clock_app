@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>発表練習用時間計測アプリ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./css/clock.css" type="text/css">
+    <script type="text/javascript" src="./js/clock.js"></script>
+  </head>
+  <body>
+    <h2>発表用タイマー</h2>
+    <form name="time">
+      経過時間：<input class="keika" type="text" name="now" value="0分0秒" readonly>
+      <br><br>
+      <!--<div class="setting">-->
+      予鈴:<input class="setting" type="text" name="yorei" value="3">分, 
+      終了目安：<input class="setting" type="text" name="fin" value="5">分
+      <br>
+      <!--</div>-->
+      <br><br>
+      <input type="button" name="start_button" value="スタート" onClick="start()">
+      <input type="button" name="rap_button" value="ラップ" onClick="rap()" disabled>
+      <input type="button" name="stop_button" value="ストップ" onClick="stop()" disabled>
+      <input type="button" name="reset_button" value="リセット" onClick="all_reset()" >
+      <br>
+      <input type="button" name="test_yorei" value="予鈴音チェック" onClick="yorei_check()">
+      <input type="button" name="test_fin" value="終了音チェック" onClick="fin_check()">
+      <br>
+      <input type="button" name="save" value="発表情報を保存" onClick="textSave()">
+      <br>
+      <a id="DL_link"></a>
+    </form>
+    
+    <form id="input_box">
+      <div id="text">
+	<div class="rap_section">
+	  ＜ラップタイム＞<br>
+	  <textarea id="rap" readonly="readonly"></textarea>
+	</div>
+	<div class="memo_section">
+	  ＜スライドに関するメモ＞<br>
+	  <div id="memo_page">1ページ目</div>
+	  <textarea id="memo"></textarea>
+	  <br>
+	  <input type="button" id="back" value="前のページ" onClick="back_page()">
+	  <input type="button" id="next" value="次のページ"  onClick="next_page()">
+	</div>
+      </div>
+    </form>
+  </body>
+</html>
